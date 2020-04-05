@@ -35,12 +35,6 @@ class Edge:
 class Graph:
     
     def __init__(self):
-        self.node_dict = None
-        self.edge_dict = None
-        
-class Graph:
-    
-    def __init__(self):
         self.node_dict = {}
         self.edge_dict = {}
         
@@ -82,3 +76,34 @@ class Graph:
         self.node_dict['B'] = nodeB
         self.node_dict['S'] = nodeS
         self.node_dict['X'] = nodeX
+        
+        
+    def print_nodes(self):
+        #print the nodes by using the dictionary
+        # hint: use a for loop
+        
+        for node in self.node_dict.values():
+            # 1. print the name of the node  using the getter fx 
+            print(  node.getName() , end='' )
+            # 2. print the postion of the node using the getter fx
+            print(   node.getPosition()  )
+            
+            #print(  node.getEdges()  ) 
+            
+def foo():
+    print("Hey")
+        
+
+#  Exercise: 
+# 1. create a Graph object called 'G'
+G = Graph()
+
+# it can call the simple_graph now 
+# 2. call the simple_graph function on the object'G'
+#    to create the actual graph G* 
+G.simple_graph()
+
+
+# Jason: tell me the code 
+G.print_nodes() 
+
