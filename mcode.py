@@ -38,6 +38,12 @@ class Graph:
         self.node_dict = None
         self.edge_dict = None
         
+class Graph:
+    
+    def __init__(self):
+        self.node_dict = {}
+        self.edge_dict = {}
+        
     def simple_graph(self):
         
         #Exercise:  create the 4 nodes (A,S,B,X):
@@ -51,6 +57,10 @@ class Graph:
         e1 = Edge(nodeS, nodeX)
         e2 = Edge(nodeA, nodeS)
         e3 = Edge(nodeS, nodeB)
+        
+        self.edge_dict['e1']  = e1 
+        self.edge_dict['e2']  = e2 
+        self.edge_dict['e3']  = e3 
         
         
         #add the individual edges to their respected nodes
@@ -67,3 +77,8 @@ class Graph:
         #node X
         nodeX.edges.append( e1 )
         
+        
+        self.node_dict['A'] = nodeA
+        self.node_dict['B'] = nodeB
+        self.node_dict['S'] = nodeS
+        self.node_dict['X'] = nodeX
