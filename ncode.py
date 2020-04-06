@@ -28,20 +28,31 @@ class Graph:
         nodeX.edges.append( e1 )
         
         
-        nodes_dict['A'] = nodeA
-        nodes_dict['B'] = nodeB
-        nodes_dict['S'] = nodeS
-        nodes_dict['X'] = nodeX
+        self.nodes_dict['A'] = nodeA
+        self.nodes_dict['B'] = nodeB
+        self.nodes_dict['S'] = nodeS
+        self.nodes_dict['X'] = nodeX
         
-        edges_dict['e1'] = e1
-        edges_dict['e2'] = e2
-        edges_dict['e3'] = e3
+        self.edges_dict['e1'] = e1
+        self.edges_dict['e2'] = e2
+        self.edges_dict['e3'] = e3
         
-def foo():
-    print( "hello")
+    def getNodesDict(self):
+        return self.nodes_dict
         
-# Exercise: 
-#foo()
-create_simple_graph()
 
-        
+G = Graph()
+G.create_simple_graph() 
+
+# Exercise: 
+# iterate through with a for loop the nodes in the object G 
+# is by using the nodes_dict
+
+
+nd = G.getNodesDict()
+
+#for node in nd:
+#    print(node)
+
+print( nd['A'].name , nd['A'].position )
+#print out each nodes name and postion
