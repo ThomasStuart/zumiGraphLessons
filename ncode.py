@@ -1,3 +1,33 @@
+class Node: 
+    def __init__(self, name, edges, position, visited ):
+        self.name       = name 
+        self.edges      = edges 
+        self.position   = position 
+        self.visited    = visited
+    
+    def getName(self):
+        return self.name
+    
+    def getEdges(self):
+        return self.edges
+        
+    def getPosition(self):
+        return self.position 
+    
+    def getVisited(self):
+        return self.visited
+
+
+class Edge: 
+    def __init__(self, name, node1,node2):
+        self.name      = name 
+        self.startNode = node1
+        self.endNode   = node2
+        
+    def getName(self):
+        return self.name
+
+
 class Graph:
     
     def __init__(self):
@@ -43,16 +73,33 @@ class Graph:
 
 G = Graph()
 G.create_simple_graph() 
-
-# Exercise: 
-# iterate through with a for loop the nodes in the object G 
-# is by using the nodes_dict
-
-
 nd = G.getNodesDict()
 
-#for node in nd:
-#    print(node)
+print( nd['A'].name , ':', nd['A'].position )
+listA = nd['A'].getEdges()
+for edge in listA:
+    print( edge.getName() ) 
+    
+print()
+print()
 
-print( nd['A'].name , nd['A'].position )
-#print out each nodes name and postion
+
+print( nd['B'].name , ':', nd['B'].position )
+listB = nd['B'].getEdges()
+for edge in listB:
+    print( edge.getName() ) 
+print()
+print()
+
+print( nd['S'].name , ':', nd['S'].position )
+listS = nd['S'].getEdges()
+for edge in listS:
+    print( edge.getName() ) 
+    
+print()
+print()
+
+print( nd['X'].name , ':', nd['X'].position )
+listX = nd['X'].getEdges()
+for edge in listX:
+    print( edge.getName() ) 
