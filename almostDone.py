@@ -122,7 +122,7 @@ class Graph:
                 return currRoute
 
             for edge in currNode.edges:
-                print("Examining edge from ->", edge.get_startNode_name(), "<- to ->", edge.get_endNode_name(), "<-" )
+                #print("Examining edge from ->", edge.get_startNode_name(), "<- to ->", edge.get_endNode_name(), "<-" )
                 if   edge.startNode != currNode and edge.startNode.visited == False:
                     new_route = currRoute.copy()
                     new_route.append( ( edge, edge.get_endNodeDirToStartNode() ))
@@ -161,7 +161,7 @@ def main():
     print("-----  Final Route: ----- " )
     i = 0
     for item in route:
-        print( item[0].get_edgeName(), item[1] ) 
+        print("\t edge name: ", item[0].get_edgeName(), "desired angle", item[1] ) 
         i+=1
     
     
