@@ -13,9 +13,34 @@ def getTimeForTravel(distanceInInches):
     time = (distanceInInches + 1) / DIV_CONST
     return time
 
+# ex 1:
+# currHeading    = 270  (down)
+# desiredHeading = 90   (up)
+# X = 180
+# we want to turn 180 degrees in the pos -> turning left by 180 
+
+# answer = change_heading_to_desired_heading(currHeading, desiredHeading ) 
+# answer = 90 
+
 def change_heading_to_desired_heading( currHeading, desiredHeading):
-    zumi.turn_left(90)
-    return 90
+        # step1: calc the magnitude of angle change , call it X
+        X = currHeading - desiredHeading
+        
+        #step2: determine which way we need to turn
+        if  X    >    0:
+            print("turned left")
+            zumi.turn_left( X )
+            return desiredHeading
+        
+        elif X   <    0:
+            X = abs( X )
+            print("turned right")
+            zumi.turn_right( X )
+            return desiredHeading
+        
+        else:
+            print( "no turn needed ")
+            return desiredHeading
     
 
 # GOAL IS TO GET TO AN EMPTY LIST
