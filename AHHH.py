@@ -5,7 +5,7 @@ zumi = Zumi()
 DIV_CONST = 6.0
 POWER   = 40
 # globals
-heading = 0   
+heading = 180  
 route = [ (90, 10) ] # first part is angle, second is distance 
                         # angle = 90 degrees , distance = 10 inches 
     
@@ -24,23 +24,26 @@ def getTimeForTravel(distanceInInches):
 
 def change_heading_to_desired_heading( currHeading, desiredHeading):
         # step1: calc the magnitude of angle change , call it X
-        X = currHeading - desiredHeading
+        X = desiredHeading - currHeading
+        print("X", X)
+        zumi.turn(X)
+        return desiredHeading
         
-        #step2: determine which way we need to turn
-        if  X    >    0:
-            print("turned left")
-            zumi.turn_left( X )
-            return desiredHeading
+#         #step2: determine which way we need to turn
+#         if  X    >    0:
+#             print("turned left")
+#             zumi.turn_left( X )
+#             return desiredHeading
         
-        elif X   <    0:
-            X = abs( X )
-            print("turned right")
-            zumi.turn_right( X )
-            return desiredHeading
+#         elif X   <    0:
+#             X = abs( X )
+#             print("turned right")
+#             zumi.turn_right( X )
+#             return desiredHeading
         
-        else:
-            print( "no turn needed ")
-            return desiredHeading
+#         else:
+#             print( "no turn needed ")
+#             return desiredHeading
     
 
 # GOAL IS TO GET TO AN EMPTY LIST
