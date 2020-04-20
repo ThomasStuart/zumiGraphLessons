@@ -6,8 +6,6 @@ zumi.mpu.calibrate_MPU()
 # CONSTANTS
 DIV_CONST = 6.0
 POWER = 40
-# variables 
-heading = 0
 
 
 class Node:
@@ -153,10 +151,10 @@ def main():
     G.create_simple()
     #G.create_d_graph()
     #G.create_complex()
-    #route = G.search('s', 'x')
+    route = G.search('s', 'x')
     #route = G.search('s', 'a')
     #route = G.search('s', 'b')
-
+    #route = G.search('x', 'a')
 
     print("-----  Final Route: ----- " )
     i = 0
@@ -164,7 +162,7 @@ def main():
         print("\t edge name: ", item[0].get_edgeName(), "desired angle", item[1] ) 
         i+=1
     
-    
+    heading = 90
     print("currHeading", heading)
     while len( route ) != 0 :
         pair = route[0]   
