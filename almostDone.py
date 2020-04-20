@@ -165,10 +165,10 @@ def main():
         i+=1
     
     
-    
+    print("currHeading", heading)
     while len( route ) != 0 :
         pair = route[0]   
-        desired_angle    = pair[0] 
+        desired_angle    = pair[1] 
 
         # Step1: change heading to desired heading 
         change_heading_to_desired_heading( heading, desired_angle )
