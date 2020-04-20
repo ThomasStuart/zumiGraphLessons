@@ -153,7 +153,7 @@ def main():
     G.create_simple()
     #G.create_d_graph()
     #G.create_complex()
-    route = G.search('s', 'x')
+    #route = G.search('s', 'x')
     #route = G.search('s', 'a')
     #route = G.search('s', 'b')
 
@@ -171,13 +171,13 @@ def main():
         desired_angle    = pair[1] 
 
         # Step1: change heading to desired heading 
-        change_heading_to_desired_heading( heading, desired_angle )
+        heading = change_heading_to_desired_heading( heading, desired_angle )
 
 
         # Step2: get the distance we need to go 
         desired_distance = 10
         time = getTimeForTravel(desired_distance)
-        zumi.forward(POWER, time)  # Amrutha, change this to be a print statement
+        zumi.forward(POWER, time)   
 
 
         # Step3: deletes the first element in list
