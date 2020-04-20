@@ -145,7 +145,7 @@ def change_heading_to_desired_heading( currHeading, desiredHeading):
         # step1: calc the magnitude of angle change , call it X
         X = desiredHeading - currHeading
         print("X", X)
-        zumi.turn(X)
+        zumi.turn(X) # Amrutha, change this to be a print statement - >  print("zumi turned by :", X )
         return desiredHeading
     
 def main():
@@ -165,23 +165,23 @@ def main():
         i+=1
     
     
-#     while len( route ) != 0 :
-#         pair = route[0]  # pair = (90, 10)
+    
+    while len( route ) != 0 :
+        pair = route[0]   
+        desired_angle    = pair[0] 
 
-#         desired_angle    = pair[0]  # 90
-#         desired_distance = pair[1]  # 10
-
-#         # Step1: change heading to desired heading 
-#         change_heading_to_desired_heading( heading, desired_angle )
-
-
-#         # Step2: get the distance we need to go 
-#         time = getTimeForTravel(desired_distance)
-#         zumi.forward(POWER, time)
+        # Step1: change heading to desired heading 
+        change_heading_to_desired_heading( heading, desired_angle )
 
 
-#         # Step3: deletes the first element in list
-#         route.pop(0)
+        # Step2: get the distance we need to go 
+        desired_distance = 10
+        time = getTimeForTravel(desired_distance)
+        zumi.forward(POWER, time)  # Amrutha, change this to be a print statement
+
+
+        # Step3: deletes the first element in list
+        route.pop(0)
 
 
 
